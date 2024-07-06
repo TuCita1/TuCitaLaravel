@@ -16,10 +16,12 @@ class UsuarioController extends Controller
             'apellido' => 'required|min:3',
             'email' => 'required|email',
             'telefono' => 'required|min:10',
-            'contraseña' => 'required|password',            
-            'id_tipo_usuario' => 'required'
+            'contraseña' => 'required',            
+            'id_tipo_usuario' => 'required',
+            'image' => 'required'
         ]            
         );
+        
         // Almacenar la imagen en el directorio 'public/img'
         $imageName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('img/user'), $imageName);
@@ -48,7 +50,7 @@ class UsuarioController extends Controller
     {
         $request->validate([
             'email' => 'required|email',            
-            'contraseña' => 'required|password',                        
+            'contraseña' => 'required',                        
         ]            
         );
         // Obtener el correo y la contraseña del request
@@ -59,17 +61,10 @@ class UsuarioController extends Controller
         $usuario = Usuario::with('tipoUsuario')
             ->where('email', $email)
             ->where('contraseña', $contraseña)
-            ->first();
-
-
-        $request->session()->put("id", $usuario->id);
-        $request->session()->put("nombre", $usuario->nombre);
-        $request->session()->put("email", $usuario->email);
-        $request->session()->put("url", $usuario->url_imagen);
+            ->first();        
 
         // Si se encuentra un usuario
-        if ($usuario) {
-            
+        if ($usuario) {            
             // Redirigir a la ruta correspondiente según el tipo de usuario
             if ($usuario->id_tipo_usuario == 1) {
                 
@@ -80,8 +75,7 @@ class UsuarioController extends Controller
                 
                 $this->storage($request, $usuario);                
                 return redirect()->route('proveedor');
-            }
-            return $usuario;
+            }            
         }
 
         // Si no se encuentra el usuario o las credenciales no son válidas, redirigir a la ruta de inicio de sesión

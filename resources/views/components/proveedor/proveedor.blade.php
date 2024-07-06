@@ -1,8 +1,8 @@
 <x-index :title="'Proveedor'">    
     <header>
-        <h1>Proveedor</h1>
+        <h1>Pagina principal del proveedor</h1>
         <p>Nombre: {{ session('nombre') }}</p>
-        <a href="{{ route('negocio-create') }}"><button>Crear</button></a>
+        <a href="{{ route('negocio') }}"><button>Negocios</button></a>        
     </header>
     <main>
         <div>
