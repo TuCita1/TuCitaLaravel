@@ -32,8 +32,17 @@
                     @csrf
 
                     <h2>Iniciar Sesion</h2>
-                    <input type="email" name="email" placeholder="Correo electronico">
-                    <input type="password" name="contraseña" placeholder="Contraseña">
+
+                    <input type="email" name="email" placeholder="Correo electronico" value="{{old('email')}}">
+                    @error('email')
+                        {{$message}}
+                    @enderror
+                    
+                    <input type="password" name="contraseña" placeholder="Contraseña" value="{{old('contraseña')}}">
+                    @error('contraseña')
+                        {{$message}}
+                    @enderror
+
                     <button type="submit">Ingresar</button>
                 </form>
 
@@ -43,20 +52,41 @@
                     @csrf
                     <h2>Registrarse</h2>
 
-                    <input type="text" name="nombre" placeholder="Nombre">
-                    <input type="text" name="apellido" placeholder="Apellido">
-                    <input type="email" name="email" placeholder="Correo">
-                    <input type="text" name="telefono" placeholder="Telefono">
-                    <input type="password" name="contraseña" placeholder="Contraseña">
+                    <input type="text" name="nombre" placeholder="Nombre" value="{{old('nombre')}}"> 
+                    @error('nombre')
+                        {{$message}}
+                    @enderror
+                    <input type="text" name="apellido" placeholder="Apellido" value="{{old('apellido')}}">
+                    @error('apellido')
+                        {{$message}}
+                    @enderror
+                    <input type="email" name="email" placeholder="Correo" value="{{old('email')}}">
+                    @error('email')
+                        {{$message}}
+                    @enderror
+                    <input type="text" name="telefono" placeholder="Telefono" value="{{old('telefono')}}">
+                    @error('telefono')
+                        {{$message}}
+                    @enderror
+                    <input type="password" name="contraseña" placeholder="Contraseña" value="{{old('contraseña')}}">
+                    @error('contraseña')
+                        {{$message}}
+                    @enderror
 
-                    <input type="file" name="image" accept="image/*">
+                    <input type="file" name="image" accept="image/*" value="{{old('image')}}">
+                    @error('image')
+                        {{$message}}
+                    @enderror
 
                     <label for="opciones">Tipo de Usuario</label>
-                    <select name="id_tipo_usuario">
+                    <select name="id_tipo_usuario" value="{{old('id_tipo_usuario')}}">
                         @foreach ($tipoUsuarios as $tipoUsuario)
                             <option value="{{ $tipoUsuario->id }}">{{ $tipoUsuario->nombre }}</option>
                         @endforeach
                     </select>
+                    @error('id_tipo_usuario')
+                        {{$message}}
+                    @enderror
 
                     <button type="submit">Guardar Usuario</button>
                 </form>

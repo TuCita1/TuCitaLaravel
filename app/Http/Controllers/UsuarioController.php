@@ -11,8 +11,16 @@ class UsuarioController extends Controller
 
     public function crear(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required|min:3',
+            'apellido' => 'required|min:3',
+            'email' => 'required|email',
+            'telefono' => 'required|min:10',
+            'contraseña' => 'required|password',            
+            'id_tipo_usuario' => 'required'
+        ]            
+        );
         // Almacenar la imagen en el directorio 'public/img'
-
         $imageName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('img/user'), $imageName);
 
@@ -38,7 +46,11 @@ class UsuarioController extends Controller
 
     public function ingresar(Request $request)
     {
-
+        $request->validate([
+            'email' => 'required|email',            
+            'contraseña' => 'required|password',                        
+        ]            
+        );
         // Obtener el correo y la contraseña del request
         $email = $request->email;
         $contraseña = $request->contraseña;

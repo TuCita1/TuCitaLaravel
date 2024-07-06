@@ -24,8 +24,7 @@ class Login extends Component
         $tipoUsuario = new TipoUsuarioController();
         $tipos = $tipoUsuario->getAll();
         unset($tipos[2]);
-        return $tipos;
-        
+        return $tipos;        
     }
 
     /**
