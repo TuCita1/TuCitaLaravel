@@ -3,6 +3,7 @@
         <h1>Negocios</h1>
         
         <a href="{{ route('negocio-form',0) }}"><button>Crear</button></a>
+        <a href="{{ route('proveedor') }}"><button>Volver</button></a>
     </header>
     <main>
         <div>

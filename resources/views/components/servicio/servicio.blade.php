@@ -3,6 +3,7 @@
         <h1>Servicios</h1>
         
         <a href="{{ route('servicio-form',0) }}"><button>Crear</button></a>
+        <a href="{{ route('proveedor') }}"><button>Volver</button></a>
     </header>
     <main>
         <div>
@@ -22,7 +23,6 @@
                         @method('DELETE')
                         <button type="submit">Eliminar</button>
                     </form>
-
                 </div>            
             @endforeach
         </div>

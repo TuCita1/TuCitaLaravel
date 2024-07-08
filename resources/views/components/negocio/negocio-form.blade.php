@@ -1,6 +1,6 @@
 <x-index :title="'Negocio'">
     <header>
-        
+        <a href="{{ route('negocio') }}"><button>Volver</button></a>
     </header>
     <main>
         <label>{{$id}}</label>
