@@ -17,12 +17,12 @@ class Login extends Component
      */
     public function __construct()
     {
-        $this->tipoUsuarios = $this->getTypeUsers();
+        $this->tipoUsuarios = $this->obtenerTiposUsuario();
     }
 
-    private function getTypeUsers(){
+    private function obtenerTiposUsuario(){
         $tipoUsuario = new TipoUsuarioController();
-        $tipos = $tipoUsuario->getAll();
+        $tipos = $tipoUsuario->obtenerTodos();
         unset($tipos[2]);
         return $tipos;        
     }

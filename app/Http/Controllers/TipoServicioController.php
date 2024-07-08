@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\TipoUsuario;
+use App\Models\TipoServicio;
 
-class TipoUsuarioController extends Controller
+class TipoServicioController extends Controller
 {
     public function obtenerTodos(){
         // Recuperar todos los registros de la tabla TipoUsuario
-        $tipos = TipoUsuario::all();
+        $tipos = TipoServicio::all();
         // Retornar la colección de tipos de usuario
         return $tipos;        
     }
