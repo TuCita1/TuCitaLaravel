@@ -40,6 +40,24 @@
                     {{ $message }}
                 @enderror
 
+                <input type="number" name="servicios_simultaneos" placeholder="servicios simultaneos"
+                    value="{{ old('servicios_simultaneos', $servicio->servicios_simultaneos) }}">
+                @error('servicios_simultaneos')
+                    {{ $message }}
+                @enderror
+
+                <input type="number" name="hora_entrada" placeholder="hora de entrada"
+                    value="{{ old('hora_entrada', $servicio->hora_entrada) }}">
+                @error('hora_entrada')
+                    {{ $message }}
+                @enderror
+
+                <input type="number" name="hora_salida" placeholder="hora de salida"
+                    value="{{ old('hora_salida', $servicio->hora_salida) }}">
+                @error('hora_salida')
+                    {{ $message }}
+                @enderror
+
                 <input type="file" name="image" accept="image/*" value="{{ old('image', $servicio->image) }}">
                 @error('image')
                     {{ $message }}
@@ -68,7 +86,8 @@
                 <button type="submit">Actualizar</button>
             </form>
         @else
-            <form method="POST" action="{{ route('servicio-crear') }}" enctype="multipart/form-data"
+            
+        <form method="POST" action="{{ route('servicio-crear') }}" enctype="multipart/form-data"
                 class="formulario_register">
                 @csrf
                 <h1>Crear servicio</h1>
@@ -90,10 +109,25 @@
                     {{ $message }}
                 @enderror
 
-                <input type="number" name="duracion" placeholder="duracion servicio"value="{{ old('duracion') }}">
+                <input type="number" name="duracion" placeholder="duracion servicio" value="{{ old('duracion') }}">
                 @error('duracion')
                     {{ $message }}
                 @enderror
+
+                <input type="number" name="servicios_simultaneos" placeholder="servicios simultaneos" value="{{ old('servicios_simultaneos') }}">
+            @error('servicios_simultaneos')
+                {{ $message }}
+            @enderror
+
+            <input type="number" name="hora_entrada" placeholder="hora de entrada" value="{{ old('hora_entrada') }}">
+            @error('hora_entrada')
+                {{ $message }}
+            @enderror
+
+            <input type="number" name="hora_salida" placeholder="hora de salida" value="{{ old('hora_salida') }}">
+            @error('hora_salida')
+                {{ $message }}
+            @enderror                
 
                 <input type="file" name="image" accept="image/*" value="{{ old('image') }}">
                 @error('image')

@@ -19,6 +19,9 @@ class ServicioController extends Controller
                 'descripcion' => 'required',
                 'valor' => 'required',
                 'duracion' => 'required',
+                'servicios_simultaneos' => 'required',
+                'hora_entrada' => 'required',
+                'hora_salida' => 'required',                
                 'image' => 'required',
                 'id_negocio' => 'required',
                 'id_tipo_servicio' => 'required'
@@ -38,6 +41,9 @@ class ServicioController extends Controller
         $servicio->descripcion = $request->descripcion;
         $servicio->valor = $request->valor;
         $servicio->duracion = $request->duracion;
+        $servicio->servicios_simultaneos = $request->servicios_simultaneos;
+        $servicio->hora_entrada = $request->hora_entrada;
+        $servicio->hora_salida = $request->hora_salida;
         $servicio->id_negocio = $request->id_negocio;
         $servicio->id_tipo_servicio = $request->id_tipo_servicio;        
         $servicio->url_imagen = 'img/service/' . $imageName;
@@ -60,6 +66,9 @@ class ServicioController extends Controller
                 'descripcion' => 'required',
                 'valor' => 'required',
                 'duracion' => 'required',
+                'servicios_simultaneos' => 'required',
+                'hora_entrada' => 'required',
+                'hora_salida' => 'required',
                 'image' => 'required',
                 'id_negocio' => 'required',
                 'id_tipo_servicio' => 'required'
@@ -80,6 +89,9 @@ class ServicioController extends Controller
         $servicio->descripcion = $request->descripcion;
         $servicio->valor = $request->valor;
         $servicio->duracion = $request->duracion;
+        $servicio->servicios_simultaneos = $request->servicios_simultaneos;
+        $servicio->hora_entrada = $request->hora_entrada;
+        $servicio->hora_salida = $request->hora_salida;
         $servicio->id_negocio = $request->id_negocio;
         $servicio->id_tipo_servicio = $request->id_tipo_servicio;        
         $servicio->url_imagen = 'img/service/' . $imageName;
@@ -101,6 +113,18 @@ class ServicioController extends Controller
     public function obtenerServicioPorId($id)
     {
         $servicio = Servicio::where('id', $id)->first();
+        return $servicio;
+    }
+
+    public function obtenerServicioPorIdConReserva($id)
+    {
+        $servicio = Servicio::with('reserva')->where('id', $id)->first();        
+        return $servicio;
+    }
+
+    public function obtenerServicioPorTipo($idTipoServicio)
+    {
+        $servicio = Servicio::with('negocio')->where('id_tipo_servicio', $idTipoServicio)->get();
         return $servicio;
     }
 

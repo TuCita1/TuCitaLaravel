@@ -22,34 +22,6 @@ SET time_zone = "+00:00";
 --
 
 --
--- Volcado de datos para la tabla `negocio`
---
-
-INSERT INTO `negocio` (`id`, `nombre`, `direccion`, `telefono`, `url_imagen`, `id_usuario`) VALUES
-(1, 'style', 'cl 1 # 1 - 1', '1223344556', 'img/business/1720496738.jpg', 3),
-(2, 'NiceLook', 'cl 2 # 2 - 2', '2334455667', 'img/business/1720496795.jpg', 3),
-(3, 'TopLight', 'cl 3 # 3 - 3', '3445566778', 'img/business/1720496944.jpg', 4),
-(4, 'youStyle', 'cl 4 # 4 - 4', '4556677889', 'img/business/1720496999.jpg', 4);
-
---
--- Volcado de datos para la tabla `servicio`
---
-
-INSERT INTO `servicio` (`id`, `nombre`, `descripcion`, `valor`, `duracion`, `url_imagen`, `id_negocio`, `id_tipo_servicio`) VALUES
-(1, 'spa day', 'descripcion', 150000, 4, 'img/service/1721180263.png', 1, 1),
-(2, 'spa full', 'descripcion', 150000, 4, 'img/service/1721180306.jpg', 2, 1),
-(3, 'corte hombre', 'descripcion', 20000, 1, 'img/service/1721180362.webp', 1, 2),
-(4, 'corte mujer', 'descripcion', 25000, 2, 'img/service/1721180413.jpg', 2, 2),
-(5, 'afeitado', 'descripcion', 12000, 1, 'img/service/1721180459.jpg', 1, 3),
-(6, 'barva full', 'descripcion', 12000, 2, 'img/service/1721180497.jpg', 2, 3),
-(7, 'spa top', 'descripcion', 120000, 4, 'img/service/1721181048.jpg', 3, 1),
-(8, 'spa style', 'descripcion', 150000, 4, 'img/service/1721181152.webp', 4, 1),
-(9, 'tintura', 'descripcion', 25000, 2, 'img/service/1721181251.jpg', 3, 2),
-(10, 'cepillado', 'descripcion', 12000, 1, 'img/service/1721181286.jpg', 4, 2),
-(11, 'combo', 'descripcion', 24000, 2, 'img/service/1721181329.webp', 3, 3),
-(12, 'full', 'descripcion', 30000, 2, 'img/service/1721181358.jpg', 4, 3);
-
---
 -- Volcado de datos para la tabla `tipo_servicio`
 --
 
@@ -76,6 +48,36 @@ INSERT INTO `usuario` (`id`, `nombre`, `apellido`, `email`, `telefono`, `url_ima
 (2, 'pedro', 'ortiz', 'pedro-ortiz@gmail.com', '3223334455', 'img/user/1720491737.webp', '12345', 1),
 (3, 'jose', 'roa', 'jose-roa@gmail.com', '33334445566', 'img/user/1720496244.png', '12345', 2),
 (4, 'marco', 'lopez', 'marco-lopez@gmail.com', '3445556677', 'img/user/1720496317.jpg', '12345', 2);
+
+--
+-- Volcado de datos para la tabla `negocio`
+--
+
+INSERT INTO `negocio` (`id`, `nombre`, `direccion`, `telefono`, `url_imagen`, `id_usuario`) VALUES
+(1, 'style', 'cl 1 # 1 - 1', '1223344556', 'img/business/1720496738.jpg', 3),
+(2, 'NiceLook', 'cl 2 # 2 - 2', '2334455667', 'img/business/1720496795.jpg', 3),
+(3, 'TopLight', 'cl 3 # 3 - 3', '3445566778', 'img/business/1720496944.jpg', 4),
+(4, 'youStyle', 'cl 4 # 4 - 4', '4556677889', 'img/business/1720496999.jpg', 4);
+
+--
+-- Volcado de datos para la tabla `servicio`
+--
+
+INSERT INTO `servicio` (`id`, `nombre`, `descripcion`, `valor`, `duracion`,`servicios_simultaneos`,`hora_entrada`,`hora_salida`, `url_imagen`, `id_negocio`, `id_tipo_servicio`) VALUES
+(1, 'spa day', 'descripcion', 150000, 4,2,'07:00:00','15:00:00', 'img/service/1721180263.png', 1, 1),
+(2, 'spa full', 'descripcion', 150000, 4,3,'07:00:00','15:00:00', 'img/service/1721180306.jpg', 2, 1),
+(3, 'corte hombre', 'descripcion', 20000, 1,4,'07:00:00','15:00:00', 'img/service/1721180362.webp', 1, 2),
+(4, 'corte mujer', 'descripcion', 25000, 2,2,'07:00:00','15:00:00', 'img/service/1721180413.jpg', 2, 2),
+(5, 'afeitado', 'descripcion', 12000, 1,3,'07:00:00','15:00:00', 'img/service/1721180459.jpg', 1, 3),
+(6, 'barva full', 'descripcion', 12000, 2,4,'07:00:00','15:00:00', 'img/service/1721180497.jpg', 2, 3),
+(7, 'spa top', 'descripcion', 120000, 4,2,'07:00:00','15:00:00', 'img/service/1721181048.jpg', 3, 1),
+(8, 'spa style', 'descripcion', 150000, 4,3,'07:00:00','15:00:00', 'img/service/1721181152.webp', 4, 1),
+(9, 'tintura', 'descripcion', 25000, 2,4,'07:00:00','15:00:00', 'img/service/1721181251.jpg', 3, 2),
+(10, 'cepillado', 'descripcion', 12000, 1,2,'07:00:00','15:00:00', 'img/service/1721181286.jpg', 4, 2),
+(11, 'combo', 'descripcion', 24000, 2,3,'07:00:00','15:00:00', 'img/service/1721181329.webp', 3, 3),
+(12, 'full', 'descripcion', 30000, 2,4,'07:00:00','15:00:00', 'img/service/1721181358.jpg', 4, 3);
+
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

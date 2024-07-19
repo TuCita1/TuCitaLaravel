@@ -11,4 +11,12 @@ class Reserva extends Model
 
     public $timestamps = false;    
     protected $table = "reserva";
+
+    public function negocio()
+    {
+        return $this->belongsTo(Negocio::class, 'id_negocio', 'id');
+    }
 }
+
+
+

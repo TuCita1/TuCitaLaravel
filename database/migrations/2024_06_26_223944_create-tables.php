@@ -65,6 +65,9 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->integer('valor');
+            $table->integer('servicios_simultaneos');
+            $table->time('hora_entrada');
+            $table->time('hora_salida');
             $table->integer('duracion');
             $table->string('url_imagen');                                
 

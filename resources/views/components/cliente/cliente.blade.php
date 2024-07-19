@@ -2,14 +2,16 @@
     <header>
         <h1>Cliente</h1>
         <p>Nombre: {{ session('nombre') }}</p>
+        <a href="{{ route('home') }}"><button>Salir</button></a>  
     </header>
     <main>
         <div>Tipos de servicio</div>
         @foreach ($tipoServicios as $tipoServicio)
             <div>
-                <label>{{ $tipoServicio->nombre }}</label>
-                <img src="{{ $servicio->url_imagen }}" alt="" style="width: 30px">
-                <label>{{ $servicio->descripcion }}</label>
+                <a href="{{ route('servicio-cliente',$tipoServicio->id) }}">                
+                    <label>{{ $tipoServicio->nombre }}</label>
+                    <img src="{{ $tipoServicio->url_imagen }}" alt="" style="width: 30px">
+                </a>                                  
             </div>
         @endforeach
     </main>

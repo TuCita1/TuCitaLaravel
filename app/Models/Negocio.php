@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Negocio extends Model
 {
     use HasFactory;
-
     public $timestamps = false;    
     protected $table = "negocio";
+
+    public function servicios()
+    {
+        return $this->hasMany(Servicio::class, 'id_negocio', 'id');
+    }    
 }

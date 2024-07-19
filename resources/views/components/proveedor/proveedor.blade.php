@@ -3,7 +3,8 @@
         <h1>Pagina principal del proveedor</h1>
         <p>Nombre: {{ session('nombre') }}</p>
         <a href="{{ route('negocio') }}"><button>Negocios</button></a>      
-        <a href="{{ route('servicio') }}"><button>Servicios</button></a>        
+        <a href="{{ route('servicio') }}"><button>Servicios</button></a>      
+        <a href="{{ route('home') }}"><button>Salir</button></a>   
     </header>
     <main>
         <div>
