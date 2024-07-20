@@ -1,14 +1,10 @@
 :root {
-    --color-primario: #8C034E;
-    --color-secundario: #730237;
-    --color-terciario: #9B7C68;
-    --color-cuaternario: #D7C2C1;
-    --color-quinario: #E1D5D7;
+  --color-claro: #eeeeee;
+  --color-oscuro: #222222;
 
-    --color-font: #232323;
-    --color-font-back: #a1a1a1;
-
-    --color-bacground: #dadada;    
-    
-    --font: "Josefin Sans", sans-serif;
-  }
+  --color-1: #23403b;
+  --color-2: #80977b;
+  --color-3: #e1c1b6;
+  --color-4: #c0917f;
+  --color-5: #415f27;
+}

@@ -1,0 +1,58 @@
+.home header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+        url(../../img/app/portada.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: var(--color-claro);
+    height: auto;
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+.home header img {
+    width: 10rem;
+}
+
+.home main {
+    padding: 2rem;
+    color: var(--color-1);
+}
+
+.home main img {
+    width: 15rem;
+    height: 10rem;
+}
+
+.home main h1 {
+    color: var(--color-2);
+}
+
+.home main .card {    
+    border-radius: 10px;  
+    padding: 1rem;
+    margin: 2rem;    
+    text-align: center;      
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);    
+}
+
+.home .info {
+    text-align: center;
+    padding: 0rem 5rem 1rem 5rem;
+}
+
+.home .flex-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.home .flex-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+}

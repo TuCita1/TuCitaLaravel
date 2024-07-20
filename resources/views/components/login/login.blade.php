@@ -4,98 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingresar y registro</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ asset('css/component/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <title>Tu-Cita</title>
 </head>
 
 <body>
+
     <main>
+
         <div class="contenedor__todo">
 
             <div class="caja__trasera">
                 <div class="caja__trasera-login">
-                    <h3>¿Ya tienes una cuenta</h3>
-                    <p>Inicia sesion para entrar en la pagina</p>
-                    <button id="btn_iniciar sesion">Iniciar Sesion</button>
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <p>Inicia sesión para entrar en la página</p>
+                    <button id="btn__iniciar-sesion">Iniciar Sesión</button>
                 </div>
-
                 <div class="caja__trasera-register">
-                    <h3>¿Aun no tienes una cuenta?</h3>
-                    <p>Registrate para que puedas iniciar sesion</p>
-                    <button id="btn_registrarse">Registrarse</button>
+                    <h3>¿Aún no tienes una cuenta?</h3>
+                    <p>Regístrate para que puedas iniciar sesión</p>
+                    <button id="btn__registrarse">Regístrarse</button>
                 </div>
             </div>
 
+            <!--Formulario de Login y registro-->
             <div class="contenedor__login-register">
 
+
+                <!--Login-->
                 <form method="POST" action="{{ route('login-ingresar') }}" class="formulario__login">
                     @csrf
 
-                    <h2>Iniciar Sesion</h2>
+                    <h2>Iniciar Sesión</h2>
 
-                    <input type="email" name="email" placeholder="Correo electronico" value="{{old('email')}}">
+                    <input type="email" name="email" placeholder="Correo electronico" value="{{ old('email') }}">
                     @error('email')
-                        {{$message}}
-                    @enderror
-                    
-                    <input type="password" name="contraseña" placeholder="Contraseña" value="{{old('contraseña')}}">
-                    @error('contraseña')
-                        {{$message}}
+                        <small>{{ $message }}</small>
                     @enderror
 
+
+                    <input type="password" name="contraseña" placeholder="Contraseña" value="{{ old('contraseña') }}">
+                    @error('contraseña')
+                        <small>{{ $message }}</small>
+                    @enderror
+                    <br>
                     <button type="submit">Ingresar</button>
                 </form>
 
-
-                <form method="POST" action="{{ route('login-crear') }}" enctype="multipart/form-data"
-                    class="formulario_register">
+                <!--Register-->
+                <form method="POST" action="{{ route('login-crear') }}" enctype="multipart/form-data" class="formulario__register">
                     @csrf
-                    <h2>Registrarse</h2>
 
-                    <input type="text" name="nombre" placeholder="Nombre" value="{{old('nombre')}}"> 
+                    <h2>Regístrarse</h2>
+
+                    <input type="text" name="nombre" placeholder="Nombre" value="{{ old('nombre') }}">
                     @error('nombre')
-                        {{$message}}
+                        <small>{{ $message }}</small>
                     @enderror
-                    <input type="text" name="apellido" placeholder="Apellido" value="{{old('apellido')}}">
+
+                    <input type="text" name="apellido" placeholder="Apellido" value="{{ old('apellido') }}">
                     @error('apellido')
-                        {{$message}}
+                        <small>{{ $message }}</small>
                     @enderror
-                    <input type="email" name="email" placeholder="Correo" value="{{old('email')}}">
+
+                    <input type="email" name="email" placeholder="Correo" value="{{ old('email') }}">
                     @error('email')
-                        {{$message}}
+                        <small>{{ $message }}</small>
                     @enderror
-                    <input type="text" name="telefono" placeholder="Telefono" value="{{old('telefono')}}">
+
+                    <input type="text" name="telefono" placeholder="Telefono" value="{{ old('telefono') }}">
                     @error('telefono')
-                        {{$message}}
+                        <small>{{ $message }}</small>
                     @enderror
-                    <input type="password" name="contraseña" placeholder="Contraseña" value="{{old('contraseña')}}">
+
+                    <input type="password" name="contraseña" placeholder="Contraseña" value="{{ old('contraseña') }}">
                     @error('contraseña')
-                        {{$message}}
+                        <small>{{ $message }}</small>
                     @enderror
+                    
 
-                    <input type="file" name="image" accept="image/*" value="{{old('image')}}">
+                    <label for="file" class="input">
+                        Seleccionar imagen
+                    </label>                    
+                    <input id="file" type="file" name="image" accept="image/*" value="{{ old('image') }}">
                     @error('image')
-                        {{$message}}
+                        <small>{{ $message }}</small>
                     @enderror
-
-                    <label for="opciones">Tipo de Usuario</label>
-                    <select name="id_tipo_usuario" value="{{old('id_tipo_usuario')}}">
+                                        
+                    
+                    <select name="id_tipo_usuario" value="{{ old('id_tipo_usuario') }}" class="input">
+                        <option value="" disabled selected >Seleccione tipo de usuario</option>
                         @foreach ($tipoUsuarios as $tipoUsuario)
                             <option value="{{ $tipoUsuario->id }}">{{ $tipoUsuario->nombre }}</option>
                         @endforeach
                     </select>
                     @error('id_tipo_usuario')
-                        {{$message}}
+                        <small>{{ $message }}</small>
                     @enderror
+                    <br>
+                    <button type="submit">Regístrarse</button>
 
-                    <button type="submit">Guardar Usuario</button>
                 </form>
-
             </div>
-
         </div>
+
     </main>
-    <script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
+    <script src="{{ asset('js/login.js') }}"></script>
 </body>
 
 </html>
