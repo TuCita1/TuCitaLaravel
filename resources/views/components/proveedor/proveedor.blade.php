@@ -1,6 +1,6 @@
 <x-index :title="'Proveedor'">
     <div class="proveedor">
-        <header>
+        <header class="header">
             <section class="flex-header">
                 <a href="{{ route('home') }}">
                     <img src="{{asset('img/app/logo.svg')}}">

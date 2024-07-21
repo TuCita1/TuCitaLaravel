@@ -1,0 +1,18 @@
+/* Estilo para los inputs de tipo file */
+input[type="file"] {
+    display: none; /* Oculta el input de tipo file */
+}
+
+/* Estilo para el contenedor del archivo */
+.file {
+  width: 100%; /* El contenedor ocupa el 100% del ancho disponible */
+  display: block; /* Muestra el contenedor como un elemento de bloque */
+  margin-top: 20px; /* Margen superior del contenedor */
+  padding: 10px; /* Espaciado interno del contenedor */
+  border: none; /* Elimina el borde del contenedor */
+  background: #F2F2F2; /* Color de fondo del contenedor */
+  font-size: 16px; /* Tamaño de la fuente del texto en el contenedor */
+  outline: none; /* Elimina el contorno del contenedor */
+  color: #7a7a7a; /* Color del texto en el contenedor */
+  cursor: pointer; /* Cambia el cursor a una mano apuntando para indicar clickeo */
+  }

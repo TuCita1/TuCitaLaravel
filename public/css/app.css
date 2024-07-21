@@ -5,9 +5,13 @@
 @import url('./common/variables.css');
 /* Importa el archivo de estilos generales que establece reglas y estilos comunes en todo el sitio */
 @import url('./common/general.css');
+@import url('./common/header.css');
+@import url('./common/card.css');
+@import url('./common/form.css');
 
 /* Importa el archivo de estilos específicos para la página de inicio */
 @import url('./component/home.css');
+
 @import url('./component/cliente.css');
 @import url('./component/proveedor.css');
 

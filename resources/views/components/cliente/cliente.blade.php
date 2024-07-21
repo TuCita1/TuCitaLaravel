@@ -1,7 +1,7 @@
 <!-- Componente principal para la vista de Cliente -->
 <x-index :title="'Cliente'">
     <div class="cliente">
-        <header>
+        <header class="header">
             <section class="flex-header">
                 <a href="{{ route('home') }}">
                     <img src="{{asset('img/app/logo.svg')}}">

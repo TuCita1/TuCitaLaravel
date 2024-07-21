@@ -106,17 +106,17 @@
         <!-- Sección principal de información adicional -->
         <main>
             <!-- Sección sobre la misión de la aplicación -->
-            <section class="card">
+            <section class="card-home">
                 <h2>Mision</h2>
                 <p>Facilitar y mejorar la experiencia de reserva para clientes y proveedores de servicios de belleza, spa y barbería, ofreciendo una plataforma accesible, intuitiva y confiable que promueva la comodidad y el bienestar.</p>
             </section>
             <!-- Sección sobre la visión de la aplicación -->
-            <section class="card">
+            <section class="card-home">
                 <h2>Vision</h2>
                 <p>Convertirnos en la principal plataforma en línea para la reserva de citas de belleza, spa y barbería, reconocida por nuestra calidad de servicio, innovación tecnológica y compromiso con la satisfacción del cliente y el crecimiento de nuestros socios comerciales.</p>
             </section>
             <!-- Sección sobre los objetivos de la aplicación -->
-            <section class="card">
+            <section class="card-home">
                 <h2>Objetivos</h2>
                 <p>Convertirnos en la plataforma líder y de confianza para la reserva de citas de belleza, spa y barbería, ofreciendo una experiencia excepcional para los usuarios y socios comerciales, impulsada por la innovación, la calidad del servicio y la conveniencia.</p>
             </section>

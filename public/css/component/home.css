@@ -18,30 +18,10 @@
     width: 10rem; /* Ancho de las imágenes dentro del encabezado */
 }
 
-/* Estilo para la sección principal de la página de inicio */
-.home main {
-    padding: 2rem; /* Espaciado interno alrededor del contenido principal */
-    color: var(--color-1); /* Color del texto en la sección principal */
-}
-
 /* Estilo para las imágenes dentro de la sección principal */
 .home main img {
     width: 15rem; /* Ancho de las imágenes en la sección principal */
     height: 10rem; /* Altura de las imágenes en la sección principal */
-}
-
-/* Estilo para los encabezados (h1) en la sección principal */
-.home main h1 {
-    color: var(--color-2); /* Color del texto del encabezado */
-}
-
-/* Estilo para las tarjetas dentro de la sección principal */
-.home main .card {    
-    border-radius: 10px; /* Bordes redondeados de las tarjetas */
-    padding: 1rem; /* Espaciado interno dentro de las tarjetas */
-    margin: 2rem; /* Margen alrededor de las tarjetas */
-    text-align: center; /* Centra el texto dentro de las tarjetas */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra alrededor de las tarjetas para un efecto de profundidad */
 }
 
 /* Estilo para la sección de información */
