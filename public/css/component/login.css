@@ -19,7 +19,7 @@ body {
 /* Estilo para el elemento principal */
 main {
     width: 100%; /* Ancho completo del contenedor principal */
-    padding: 20px; /* Espaciado interno alrededor del contenido principal */
+    padding: 90px 20px 20px 20px; /* Espaciado interno alrededor del contenido principal */
     margin: auto; /* Centra el contenedor principal horizontalmente */
     margin-top: 100px; /* Margen superior para separar del encabezado */
 }
