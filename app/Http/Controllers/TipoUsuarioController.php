@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+// Importar las clases necesarias
 use Illuminate\Http\Request;
 use App\Models\TipoUsuario;
 

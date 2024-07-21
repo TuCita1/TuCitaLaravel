@@ -1,178 +1,197 @@
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     text-decoration: none;
-     font-family: 'Roboto', sans-serif;
- }
-
- body {
-     background-image: url(../../img/app/portada.png);
-     background-size: cover;
-     background-repeat: no-repeat;
-     background-position: center;
-     background-attachment: fixed;
- }
-
- main {
-     width: 100%;
-     padding: 20px;
-     margin: auto;
-     margin-top: 100px;
- }
-
- .contenedor__todo {
-     width: 100%;
-     max-width: 800px;
-     margin: auto;
-     position: relative;
- }
-
- .caja__trasera {
-    width: 100%;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: #415f2799;    
- }
-
- .caja__trasera div {
-     margin: 100px 40px;
-     color: white;
-     transition: all 500ms;
- }
-
-
- .caja__trasera div p,
- .caja__trasera button {
-     margin-top: 30px;
- }
-
- .caja__trasera div h3 {
-     font-weight: 400;
-     font-size: 26px;
- }
-
- .caja__trasera div p {
-     font-size: 16px;
-     font-weight: 300;
- }
-
- /*Formularios*/
-
- .contenedor__login-register {
-     display: flex;
-     align-items: center;
-     width: 100%;
-     max-width: 380px;
-     position: relative;
-     top: -185px;
-     left: 10px;     
-     transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
- }
-
- .contenedor__login-register form {
-     width: 97%;
-     padding: 20px 17px;
-     background: white;
-     position: absolute;
-     border-radius: 20px;
- }
-
- .contenedor__login-register form h2 {
-     font-size: 30px;
-     text-align: center;
-     margin-bottom: 20px;
-     color: var(--color-1);
- }
-
- .contenedor__login-register form input {
-     width: 100%;
-     margin-top: 20px;
-     padding: 10px;
-     border: none;
-     background: #F2F2F2;
-     font-size: 16px;
-     outline: none;
-     border-radius: 1rem;
- }
-
- .contenedor__login-register form button {
-     margin-top: 40px;
- }
-
- select {
-     -webkit-appearance: none;
-     -moz-appearance: none;
-     appearance: none;
-     background-color: #f9f9f9;
- }
-
- select option {
-     padding: 10px;
- }
-
-
- .formulario__login {
-     opacity: 1;
-     display: block;
- }
-
- .formulario__register {
-     display: none;
- }
-
-
-
- @media screen and (max-width: 850px) {
-
-     main {
-         margin-top: 50px;
-     }
-
-     .caja__trasera {
-         max-width: 350px;
-         height: 300px;
-         flex-direction: column;
-         margin: auto;
-     }
-
-     .caja__trasera div {
-         margin: 0px;
-         position: absolute;
-     }     
-
-     .contenedor__login-register {
-         top: -10px;
-         left: -5px;
-         margin: auto;
-     }
-
-     .contenedor__login-register form {
-         position: relative;
-     }
- }
-
- input[type="file"] {
-     display: none;
- }
-
-.input {
-     width: 100%;
-     display: block;
-     margin-top: 20px;
-     padding: 10px;
-     border: none;
-     background: #F2F2F2;
-     font-size: 16px;
-     outline: none;
-     color: #7a7a7a;
-     cursor: pointer;
-     border-radius: 1rem;
+/* Estilo global para todos los elementos */
+* {
+    margin: 0; /* Elimina el margen predeterminado de todos los elementos */
+    padding: 0; /* Elimina el espaciado interno predeterminado de todos los elementos */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto totales de los elementos */
+    text-decoration: none; /* Elimina las decoraciones de texto, como subrayados en los enlaces */
+    font-family: 'Roboto', sans-serif; /* Establece la fuente Roboto como la fuente principal */
 }
 
+/* Estilo para el cuerpo de la página */
+body {
+    background-image: url(../../img/app/portada.png); /* Imagen de fondo para el cuerpo de la página */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo del cuerpo */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-position: center; /* Centra la imagen de fondo */
+    background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace con el contenido */
+}
+
+/* Estilo para el elemento principal */
+main {
+    width: 100%; /* Ancho completo del contenedor principal */
+    padding: 20px; /* Espaciado interno alrededor del contenido principal */
+    margin: auto; /* Centra el contenedor principal horizontalmente */
+    margin-top: 100px; /* Margen superior para separar del encabezado */
+}
+
+/* Estilo para el contenedor general */
+.contenedor__todo {
+    width: 100%; /* Ancho completo del contenedor */
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: auto; /* Centra el contenedor horizontalmente */
+    position: relative; /* Permite posicionar elementos hijos de manera relativa */
+}
+
+/* Estilo para el contenedor con fondo difuminado */
+.caja__trasera {
+    width: 100%; /* Ancho completo del contenedor */
+    padding: 10px 20px; /* Espaciado interno del contenedor */
+    display: flex; /* Utiliza Flexbox para el diseño */
+    justify-content: center; /* Centra los elementos hijos horizontalmente */
+    -webkit-backdrop-filter: blur(10px); /* Filtro de desenfoque de fondo para navegadores WebKit */
+    backdrop-filter: blur(10px); /* Filtro de desenfoque de fondo */
+    background-color: #415f2799; /* Color de fondo con transparencia */
+}
+
+/* Estilo para los elementos dentro del contenedor con fondo difuminado */
+.caja__trasera div {
+    margin: 100px 40px; /* Margen alrededor de los elementos */
+    color: white; /* Color del texto */
+    transition: all 500ms; /* Transición suave para todas las propiedades en 500ms */
+}
+
+/* Estilo para los párrafos y botones dentro del contenedor con fondo difuminado */
+.caja__trasera div p,
+.caja__trasera button {
+    margin-top: 30px; /* Margen superior para separar los elementos */
+}
+
+/* Estilo para los encabezados dentro del contenedor con fondo difuminado */
+.caja__trasera div h3 {
+    font-weight: 400; /* Peso de la fuente del encabezado */
+    font-size: 26px; /* Tamaño de la fuente del encabezado */
+}
+
+/* Estilo para los párrafos dentro del contenedor con fondo difuminado */
+.caja__trasera div p {
+    font-size: 16px; /* Tamaño de la fuente del párrafo */
+    font-weight: 300; /* Peso de la fuente del párrafo */
+}
+
+/*Formularios*/
+
+/* Estilo para el contenedor de formularios de inicio de sesión y registro */
+.contenedor__login-register {
+    display: flex; /* Utiliza Flexbox para el diseño del contenedor */
+    align-items: center; /* Alinea verticalmente los elementos */
+    width: 100%; /* Ancho completo del contenedor */
+    max-width: 380px; /* Ancho máximo del contenedor */
+    position: relative; /* Posiciona el contenedor de manera relativa */
+    top: -185px; /* Posición superior del contenedor */
+    left: 10px; /* Posición izquierda del contenedor */
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* Transición suave para el cambio en la posición izquierda */
+}
+
+/* Estilo para los formularios dentro del contenedor de inicio de sesión y registro */
+.contenedor__login-register form {
+    width: 97%; /* Ancho del formulario */
+    padding: 20px 17px; /* Espaciado interno del formulario */
+    background: white; /* Color de fondo del formulario */
+    position: absolute; /* Posiciona el formulario de manera absoluta dentro del contenedor */
+    border-radius: 20px; /* Bordes redondeados del formulario */
+}
+
+/* Estilo para el encabezado del formulario */
+.contenedor__login-register form h2 {
+    font-size: 30px; /* Tamaño de la fuente del encabezado */
+    text-align: center; /* Centra el texto del encabezado */
+    margin-bottom: 20px; /* Margen inferior para separar del contenido siguiente */
+    color: var(--color-1); /* Color del texto del encabezado */
+}
+
+/* Estilo para los campos de entrada del formulario */
+.contenedor__login-register form input {
+    width: 100%; /* Ancho completo de los campos de entrada */
+    margin-top: 20px; /* Margen superior para separar del contenido superior */
+    padding: 10px; /* Espaciado interno de los campos de entrada */
+    border: none; /* Elimina el borde de los campos de entrada */
+    background: #F2F2F2; /* Color de fondo de los campos de entrada */
+    font-size: 16px; /* Tamaño de la fuente de los campos de entrada */
+    outline: none; /* Elimina el contorno de los campos de entrada */
+    border-radius: 1rem; /* Bordes redondeados de los campos de entrada */
+}
+
+/* Estilo para los botones dentro del formulario */
+.contenedor__login-register form button {
+    margin-top: 40px; /* Margen superior para separar del contenido superior */
+}
+
+/* Estilo para el elemento de selección (select) */
+select {
+    -webkit-appearance: none; /* Elimina la apariencia predeterminada en navegadores WebKit */
+    -moz-appearance: none; /* Elimina la apariencia predeterminada en navegadores Mozilla */
+    appearance: none; /* Elimina la apariencia predeterminada */
+    background-color: #f9f9f9; /* Color de fondo del elemento de selección */
+}
+
+/* Estilo para las opciones dentro del elemento de selección */
+select option {
+    padding: 10px; /* Espaciado interno de las opciones */
+}
+
+/* Estilo para el formulario de inicio de sesión */
+.formulario__login {
+    opacity: 1; /* Opacidad completa del formulario de inicio de sesión */
+    display: block; /* Muestra el formulario de inicio de sesión */
+}
+
+/* Estilo para el formulario de registro */
+.formulario__register {
+    display: none; /* Oculta el formulario de registro */
+}
+
+
+/* Estilos para pantallas con un ancho máximo de 850px (dispositivos móviles) */
+@media screen and (max-width: 850px) {
+
+    main {
+        margin-top: 50px; /* Reduce el margen superior en pantallas pequeñas */
+    }
+
+    .caja__trasera {
+        max-width: 350px; /* Reduce el ancho máximo del contenedor con fondo difuminado */
+        height: 300px; /* Altura fija del contenedor con fondo difuminado */
+        flex-direction: column; /* Cambia la dirección de los elementos hijos a columna */
+        margin: auto; /* Centra el contenedor horizontalmente */
+    }
+
+    .caja__trasera div {
+        margin: 0px; /* Elimina el margen alrededor de los elementos dentro del contenedor */
+        position: absolute; /* Posiciona los elementos dentro del contenedor de manera absoluta */
+    }     
+
+    .contenedor__login-register {
+        top: -10px; /* Ajusta la posición superior del contenedor en pantallas pequeñas */
+        left: -5px; /* Ajusta la posición izquierda del contenedor en pantallas pequeñas */
+        margin: auto; /* Centra el contenedor horizontalmente */
+    }
+
+    .contenedor__login-register form {
+        position: relative; /* Cambia la posición del formulario a relativa en pantallas pequeñas */
+    }
+}
+
+/* Estilo para los inputs de tipo file (ocultos) */
+input[type="file"] {
+    display: none; /* Oculta el input de tipo file */
+}
+
+/* Estilo para los campos de entrada genéricos */
+.input {
+    width: 100%; /* Ancho completo de los campos de entrada */
+    display: block; /* Muestra los campos de entrada como elementos de bloque */
+    margin-top: 20px; /* Margen superior para separar del contenido superior */
+    padding: 10px; /* Espaciado interno de los campos de entrada */
+    border: none; /* Elimina el borde de los campos de entrada */
+    background: #F2F2F2; /* Color de fondo de los campos de entrada */
+    font-size: 16px; /* Tamaño de la fuente de los campos de entrada */
+    outline: none; /* Elimina el contorno de los campos de entrada */
+    color: #7a7a7a; /* Color del texto en los campos de entrada */
+    cursor: pointer; /* Cambia el cursor a una mano apuntando para indicar clickeo */
+    border-radius: 1rem; /* Bordes redondeados de los campos de entrada */
+}
+
+/* Estilo para mensajes de error */
 small {
-     color: red;
+    color: red; /* Color del texto para mensajes de error */
 }

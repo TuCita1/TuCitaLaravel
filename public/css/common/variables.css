@@ -1,10 +1,16 @@
-:root {
-  --color-claro: #eeeeee;
-  --color-oscuro: #222222;
+/* Definición de variables de color globales */
 
-  --color-1: #23403b;
-  --color-2: #80977b;
-  --color-3: #e1c1b6;
-  --color-4: #c0917f;
-  --color-5: #415f27;
+/* Color claro utilizado para fondos o textos de alto contraste */
+:root {
+  --color-claro: #eeeeee; /* Color blanco grisáceo claro */
+
+  /* Color oscuro utilizado para textos o elementos que necesitan contraste con fondos claros */
+  --color-oscuro: #222222; /* Color negro grisáceo oscuro */
+
+  /* Colores específicos para diferentes elementos o secciones del diseño */
+  --color-1: #23403b; /* Verde oscuro, puede usarse para fondos o elementos importantes */
+  --color-2: #80977b; /* Verde oliva claro, ideal para acentos o botones */
+  --color-3: #e1c1b6; /* Beige claro, útil para fondos o textos suaves */
+  --color-4: #c0917f; /* Color terracota, adecuado para acentos o detalles */
+  --color-5: #415f27; /* Verde bosque oscuro, puede usarse para detalles o fondos secundarios */
 }

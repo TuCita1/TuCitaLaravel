@@ -1,51 +1,57 @@
+/* Estilo para los botones */
 button {
-    background-color: var(--color-2);
-    border-radius: 1rem;
-    color: var(--color-claro);
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    text-transform: uppercase;
-    border: none;
-    font-weight: 600;
-    letter-spacing: 1px; 
+    background-color: var(--color-2); /* Color de fondo del botón */
+    border-radius: 1rem; /* Bordes redondeados del botón */
+    color: var(--color-claro); /* Color del texto del botón */
+    padding: 0.5rem 1rem 0.5rem 1rem; /* Espaciado interno del botón (arriba-abajo, izquierda-derecha) */
+    text-transform: uppercase; /* Transforma el texto a mayúsculas */
+    border: none; /* Elimina el borde del botón */
+    font-weight: 600; /* Peso de la fuente del texto del botón */
+    letter-spacing: 1px; /* Espaciado entre letras del texto del botón */
 }
 
+/* Estilo para el estado de hover (cuando el cursor está sobre el botón) */
 button:hover {    
-    font-weight: 700;    
-    color: var(--color-2);
-    background-color: var(--color-claro);
-    cursor: pointer;
+    font-weight: 700; /* Aumenta el peso de la fuente del texto del botón al pasar el cursor */    
+    color: var(--color-2); /* Cambia el color del texto al color de fondo original */
+    background-color: var(--color-claro); /* Cambia el color de fondo al color claro */
+    cursor: pointer; /* Cambia el cursor a una mano apuntando para indicar clickeo */
 }
 
+/* Estilo para los elementos de línea horizontal */
 hr {
-    margin: 2rem ;
-    border: 0.1rem solid var(--color-5);
+    margin: 2rem ; /* Margen alrededor del elemento de línea horizontal */
+    border: 0.1rem solid var(--color-5); /* Bordes de la línea horizontal, con grosor y color definidos */
 }
 
+/* Estilo para el pie de página */
 footer {
-    background-color: var(--color-1);
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: center;
-    flex-wrap: wrap;   
-    color: var(--color-claro); 
-    padding: 2rem;
+    background-color: var(--color-1); /* Color de fondo del pie de página */
+    height: auto; /* Altura automática del pie de página para ajustarse al contenido */
+    display: flex; /* Utiliza Flexbox para el diseño del pie de página */
+    flex-direction: row; /* Distribuye los elementos en una fila */
+    justify-content: space-around; /* Espacia los elementos de manera uniforme en el contenedor */
+    text-align: center; /* Centra el texto dentro del pie de página */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas si es necesario */  
+    color: var(--color-claro); /* Color del texto en el pie de página */
+    padding: 2rem; /* Espaciado interno alrededor del contenido del pie de página */
 }
 
+/* Estilo para los inputs de tipo file */
 input[type="file"] {
-    display: none;
-  }
-  
+    display: none; /* Oculta el input de tipo file */
+}
+
+/* Estilo para el contenedor del archivo */
 .file {
-    width: 100%;
-    display: block;
-    margin-top: 20px;
-    padding: 10px;
-    border: none;
-    background: #F2F2F2;
-    font-size: 16px;
-    outline: none;
-    color: #7a7a7a;
-    cursor: pointer;
-  }
+    width: 100%; /* El contenedor ocupa el 100% del ancho disponible */
+    display: block; /* Muestra el contenedor como un elemento de bloque */
+    margin-top: 20px; /* Margen superior del contenedor */
+    padding: 10px; /* Espaciado interno del contenedor */
+    border: none; /* Elimina el borde del contenedor */
+    background: #F2F2F2; /* Color de fondo del contenedor */
+    font-size: 16px; /* Tamaño de la fuente del texto en el contenedor */
+    outline: none; /* Elimina el contorno del contenedor */
+    color: #7a7a7a; /* Color del texto en el contenedor */
+    cursor: pointer; /* Cambia el cursor a una mano apuntando para indicar clickeo */
+}

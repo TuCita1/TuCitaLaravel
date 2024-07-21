@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+// Importar las clases necesarias
 use Illuminate\Http\Request;
 use App\Models\Negocio;
 
 class NegocioController extends Controller
 {
-
+    // Método para crear un nuevo negocio
     public function crear(Request $request){
 
         // Validaciones para que la creacion sea exitosa'
@@ -41,7 +42,8 @@ class NegocioController extends Controller
         // Redirigir a la ruta de inicio de sesión
         return redirect()->route('negocio');
     }
-
+    
+    // Método para actualizar un negocio existente
     public function actualizar(Request $request){
 
         // Validaciones para que la creacion sea exitosa'
@@ -77,16 +79,19 @@ class NegocioController extends Controller
         return redirect()->route('negocio');
     }
 
+    // Método para obtener los negocios del usuario
     public function obtenerNegociosPorUsuario($id_usuario){        
         $negocios = Negocio::where('id_usuario', $id_usuario)->get();        
         return $negocios;        
     }  
     
+    // Método para obtener un negocio por su ID
     public function obtenerNegocioPorId($id){        
         $negocio = Negocio::where('id', $id)->first();        
         return $negocio;        
     } 
     
+    // Método para eliminar un negocio
     public function eliminar($id){        
         $modelo = Negocio::findOrFail($id);        
         $modelo->delete();  
