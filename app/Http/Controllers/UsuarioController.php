@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+// Importar las clases necesarias
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Usuario;
@@ -9,6 +10,7 @@ use App\Models\Usuario;
 class UsuarioController extends Controller
 {
 
+    // Método para crear un nuevo usuario
     public function crear(Request $request)
     {
         $request->validate([
@@ -46,8 +48,10 @@ class UsuarioController extends Controller
         return redirect()->route('home');
     }
 
+    // Método para ingresar un usuario existente
     public function ingresar(Request $request)
     {
+        // Validaciones para asegurar que los datos del request son correctos
         $request->validate([
             'email' => 'required|email',            
             'contraseña' => 'required',                        
@@ -82,7 +86,9 @@ class UsuarioController extends Controller
         return redirect()->route('login');
     }
 
+    // Método privado para almacenar la sesión del usuario
     private function storage (Request $request, Usuario $usuario){
+        // Almacenar los datos del usuario en la sesión
         $request->session()->put("id", $usuario->id);
         $request->session()->put("nombre", $usuario->nombre);
         $request->session()->put("email", $usuario->email);

@@ -1,58 +1,67 @@
+/* Estilo para el encabezado de la página de inicio */
 .home header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)),
-        url(../../img/app/portada.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), 
+            rgba(0, 0, 0, 0.7)), /* Gradiente negro semitransparente sobre la imagen de fondo */
+        url(../../img/app/portada.png); /* Imagen de fondo del encabezado */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el área del encabezado */
 
-    color: var(--color-claro);
-    height: auto;
-    padding: 2rem;
-    margin-bottom: 1rem;
+    color: var(--color-claro); /* Color del texto en el encabezado */
+    height: auto; /* Altura automática del encabezado según su contenido */
+    padding: 2rem; /* Espaciado interno alrededor del contenido del encabezado */
+    margin-bottom: 1rem; /* Margen inferior para separar el encabezado del contenido siguiente */
 }
 
+/* Estilo para las imágenes dentro del encabezado */
 .home header img {
-    width: 10rem;
+    width: 10rem; /* Ancho de las imágenes dentro del encabezado */
 }
 
+/* Estilo para la sección principal de la página de inicio */
 .home main {
-    padding: 2rem;
-    color: var(--color-1);
+    padding: 2rem; /* Espaciado interno alrededor del contenido principal */
+    color: var(--color-1); /* Color del texto en la sección principal */
 }
 
+/* Estilo para las imágenes dentro de la sección principal */
 .home main img {
-    width: 15rem;
-    height: 10rem;
+    width: 15rem; /* Ancho de las imágenes en la sección principal */
+    height: 10rem; /* Altura de las imágenes en la sección principal */
 }
 
+/* Estilo para los encabezados (h1) en la sección principal */
 .home main h1 {
-    color: var(--color-2);
+    color: var(--color-2); /* Color del texto del encabezado */
 }
 
+/* Estilo para las tarjetas dentro de la sección principal */
 .home main .card {    
-    border-radius: 10px;  
-    padding: 1rem;
-    margin: 2rem;    
-    text-align: center;      
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);    
+    border-radius: 10px; /* Bordes redondeados de las tarjetas */
+    padding: 1rem; /* Espaciado interno dentro de las tarjetas */
+    margin: 2rem; /* Margen alrededor de las tarjetas */
+    text-align: center; /* Centra el texto dentro de las tarjetas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra alrededor de las tarjetas para un efecto de profundidad */
 }
 
+/* Estilo para la sección de información */
 .home .info {
-    text-align: center;
-    padding: 0rem 5rem 1rem 5rem;
+    text-align: center; /* Centra el texto en la sección de información */
+    padding: 0rem 5rem 1rem 5rem; /* Espaciado interno alrededor del contenido de la sección de información */
 }
 
+/* Estilo para el contenedor de encabezado flexible */
 .home .flex-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: flex; /* Utiliza Flexbox para el diseño del encabezado */
+    flex-direction: row; /* Distribuye los elementos en una fila */
+    justify-content: space-between; /* Espacia los elementos de manera uniforme en el contenedor */
 }
 
+/* Estilo para el contenedor principal flexible */
 .home .flex-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: center;
-    flex-wrap: wrap;
+    display: flex; /* Utiliza Flexbox para el diseño del contenido principal */
+    flex-direction: row; /* Distribuye los elementos en una fila */
+    justify-content: space-around; /* Espacia los elementos de manera uniforme en el contenedor */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas si es necesario */
 }

@@ -1,3 +1,4 @@
+<!-- Componente principal para la vista de Cliente -->
 <x-index :title="'Cliente'">
     <div class="cliente">
         <header>

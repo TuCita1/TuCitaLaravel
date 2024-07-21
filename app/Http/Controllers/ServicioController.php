@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+// Importar las clases necesarias
 use Illuminate\Http\Request;
 use App\Models\Servicio;
 use App\Models\Negocio;
@@ -9,6 +10,7 @@ use App\Models\Negocio;
 class ServicioController extends Controller
 {
 
+    // Método para crear un nuevo servicio
     public function crear(Request $request)
     {
 
@@ -55,6 +57,7 @@ class ServicioController extends Controller
         return redirect()->route('servicio');
     }
 
+    // Método para actualizar un servicio existente
     public function actualizar(Request $request)
     {
 
@@ -103,33 +106,44 @@ class ServicioController extends Controller
         return redirect()->route('servicio');
     }
 
+    // Método para obtener todos los servicios de un usuario específico
     public function obtenerServiciosPorUsuario($id_usuario)
     {
+        // Obtener los IDs de los negocios del usuario
         $negocios_id = Negocio::where('id_usuario', $id_usuario)->get()->pluck('id');
+        // Obtener los servicios que pertenecen a esos negocios
         $servicios = Servicio::whereIn('id_negocio', $negocios_id)->get();
         return $servicios;
     }
 
+    // Método para obtener un servicio por su ID
     public function obtenerServicioPorId($id)
     {
+        // Obtener el servicio por su ID
         $servicio = Servicio::where('id', $id)->first();
         return $servicio;
     }
 
+    // Método para obtener un servicio por su ID junto con sus reservas
     public function obtenerServicioPorIdConReserva($id)
     {
+        // Obtener el servicio por su ID incluyendo sus reservas
         $servicio = Servicio::with('reserva')->where('id', $id)->first();        
         return $servicio;
     }
 
+    // Método para obtener servicios por tipo de servicio
     public function obtenerServicioPorTipo($idTipoServicio)
     {
+        // Obtener los servicios por tipo de servicio incluyendo los negocios a los que pertenecen
         $servicio = Servicio::with('negocio')->where('id_tipo_servicio', $idTipoServicio)->get();
         return $servicio;
     }
 
+    // Método para eliminar un servicio
     public function eliminar($id)
     {
+        // Buscar el servicio por ID y eliminarlo
         $modelo = Servicio::findOrFail($id);
         $modelo->delete();
         return redirect()->route('servicio');
