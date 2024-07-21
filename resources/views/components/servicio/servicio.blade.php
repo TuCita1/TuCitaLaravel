@@ -1,33 +1,38 @@
-<x-index :title="'Servicios'">    
-    <header>
+<x-proveedor.proveedor>
+    <section class="head">
         <h1>Servicios</h1>
-        
-        <a href="{{ route('servicio-form',0) }}"><button>Crear</button></a>
-        <a href="{{ route('proveedor') }}"><button>Volver</button></a>
-    </header>
-    <main>
-        <div>
-            <h1>Listado de servicios del usuario</h1>
-            @foreach($servicios as $servicio)
+        <a href="{{ route('servicio-form', 0) }}"><button>Crear</button></a>        
+    </section>
+    <main class="content-card">
+        @foreach ($servicios as $servicio)
+            <section class="card">
+                <h1>{{ $servicio->nombre }}</h1>
                 <div>
-                    <label>{{ $servicio->nombre }}</label>
-                    <label>{{ $servicio->descripcion }}</label>
-                    <label>{{ $servicio->valor }}</label>
+                    <img src="{{ asset($servicio->url_imagen) }}" alt="">
+                </div>
+                
+                <div>
+                    <p>{{ $servicio->descripcion }}</p>
+                </div>
+                <div>
+                    <strong>Valor: </strong>
+                    <label>${{ $servicio->valor }}</label>
+                </div>
+                <div>
+                    <strong>Duración: </strong>
                     <label>{{ $servicio->duracion }}</label>
-                    
-                    <img src="{{ $servicio->url_imagen }}" alt="" style="width: 30px">
-                                        
-                    <a href="{{ route('servicio-form',$servicio->id) }}"><button>Actualizar</button></a>                    
+                </div>
+                
+
+                <div>
+                    <a href="{{ route('servicio-form', $servicio->id) }}"><button>Actualizar</button></a>
                     <form method="POST" action="{{ route('servicio.eliminar', $servicio->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit">Eliminar</button>
                     </form>
-                </div>            
-            @endforeach
-        </div>
+                </div>                
+            </section>
+        @endforeach
     </main>
-    <footer>
-
-    </footer>
-</x-index>
+</x-proveedor.proveedor>

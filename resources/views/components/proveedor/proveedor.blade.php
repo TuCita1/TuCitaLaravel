@@ -1,17 +1,34 @@
-<x-index :title="'Proveedor'">    
-    <header>
-        <h1>Pagina principal del proveedor</h1>
-        <p>Nombre: {{ session('nombre') }}</p>
-        <a href="{{ route('negocio') }}"><button>Negocios</button></a>      
-        <a href="{{ route('servicio') }}"><button>Servicios</button></a>      
-        <a href="{{ route('home') }}"><button>Salir</button></a>   
-    </header>
-    <main>
-        <div>
-            Proveedor
-        </div>
-    </main>
-    <footer>
-
-    </footer>
+<x-index :title="'Proveedor'">
+    <div class="proveedor">
+        <header>
+            <section class="flex-header">
+                <a href="{{ route('home') }}">
+                    <img src="{{asset('img/app/logo.svg')}}">
+                </a>
+                <ul>
+                    <a href="{{ route('negocio') }}">
+                        <li>Negocios</li>
+                    </a>
+                    <a href="{{ route('servicio') }}">
+                        <li>Servicios</li>
+                    </a>
+                    <a href="{{ route('servicio') }}">
+                        <li>Calificaciones</li>
+                    </a>
+                    <a href="{{ route('servicio') }}">
+                        <li>Agenda</li>
+                    </a>
+                    <a href="{{ route('servicio') }}">
+                        <li>Perfil</li>
+                    </a>
+                </ul>
+                <a href="{{ route('home') }}">
+                    <button>Salir</button>
+                </a>
+            </section>
+        </header>
+        <main>
+            {{$slot}}
+        </main>
+    </div>
 </x-index>

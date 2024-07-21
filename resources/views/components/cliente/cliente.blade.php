@@ -1,21 +1,28 @@
 <x-index :title="'Cliente'">
-    <header>
-        <h1>Cliente</h1>
-        <p>Nombre: {{ session('nombre') }}</p>
-        <a href="{{ route('home') }}"><button>Salir</button></a>  
-    </header>
-    <main>
-        <div>Tipos de servicio</div>
-        @foreach ($tipoServicios as $tipoServicio)
-            <div>
-                <a href="{{ route('servicio-cliente',$tipoServicio->id) }}">                
-                    <label>{{ $tipoServicio->nombre }}</label>
-                    <img src="{{ $tipoServicio->url_imagen }}" alt="" style="width: 30px">
-                </a>                                  
-            </div>
-        @endforeach
-    </main>
-    <footer>
-
-    </footer>
+    <div class="cliente">
+        <header>
+            <section class="flex-header">
+                <a href="{{ route('home') }}">
+                    <img src="{{asset('img/app/logo.svg')}}">
+                </a>
+                <ul>
+                    <a href="{{ route('cliente') }}">
+                    <li>Servicios</li>
+                    </a>
+                    <a href="{{ route('cliente') }}">
+                    <li>Agenda</li>
+                    </a>
+                    <a href="{{ route('cliente') }}">
+                    <li>Perfil</li>
+                    </a>
+                </ul>
+                <a href="{{ route('home') }}">
+                    <button>Salir</button>
+                </a>
+            </section>
+        </header>
+        <main>
+            {{$slot}}                       
+        </main>
+    </div>
 </x-index>

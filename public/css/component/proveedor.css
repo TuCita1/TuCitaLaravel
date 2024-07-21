@@ -1,0 +1,68 @@
+.proveedor header {
+    background-color: var(--color-1);
+    color: var(--color-claro);
+    height: auto;
+    padding: 2rem 2rem 1rem 2rem;    
+}
+
+.proveedor header img {
+    width: 10rem;
+}
+
+.proveedor ul {
+    display: flex;
+    list-style:none;
+    flex-direction: row;
+    justify-content: space-around;    
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0rem 1rem 2rem 1rem;
+}
+
+.proveedor li {
+    margin: 0 2rem 0 2rem;
+    cursor: pointer;
+    font-size: x-large;
+    height: 2rem;
+}
+
+.proveedor li:hover {
+    font-weight: 600;
+}
+
+.proveedor .flex-header {
+    display: flex;
+    flex-direction: row;    
+    align-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.proveedor main {
+    padding: 0rem;
+    color: var(--color-1);
+    margin-bottom: 2rem;
+}
+
+.proveedor main h1 {
+    color: var(--color-2);
+}
+
+.proveedor main img {
+    width: 100%;
+    height: 15rem;
+}
+
+.proveedor main div {
+    width: 33%;
+    min-width: 20rem;
+    height: auto;
+}
+
+.proveedor .flex-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+}

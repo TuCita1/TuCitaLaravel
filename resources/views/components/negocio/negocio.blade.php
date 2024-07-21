@@ -1,32 +1,35 @@
-<x-index :title="'Negocios'">    
-    <header>
+<x-proveedor.proveedor>
+    <section class="head">
         <h1>Negocios</h1>
-        
-        <a href="{{ route('negocio-form',0) }}"><button>Crear</button></a>
-        <a href="{{ route('proveedor') }}"><button>Volver</button></a>
-    </header>
-    <main>
-        <div>
-            <h1>Listado de negocios del usuario</h1>
-            @foreach($negocios as $negocio)
+        <a href="{{ route('negocio-form', 0) }}"><button>Crear</button></a>        
+    </section>
+    <main class="content-card">
+        @foreach ($negocios as $negocio)
+            <section class="card">
+                <h1>{{ $negocio->nombre }}</h1>
                 <div>
-                    <label>{{ $negocio->nombre }}</label>
+                    <img src="{{ asset($negocio->url_imagen) }}" alt="">
+                </div>
+                
+                <div>
+                    <strong>Direccion: </strong>
                     <label>{{ $negocio->direccion }}</label>
+                </div>
+                <div>
+                    <strong>Telefono: </strong>
                     <label>{{ $negocio->telefono }}</label>
-                    
-                    <img src="{{ $negocio->url_imagen }}" alt="" style="width: 30px">
-                    
-                    <a href="{{ route('negocio-form',$negocio->id) }}"><button>Actualizar</button></a>
+                </div>
+
+                <div>
+
+                    <a href="{{ route('negocio-form', $negocio->id) }}"><button>Actualizar</button></a>
                     <form method="POST" action="{{ route('negocio.eliminar', $negocio->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit">Eliminar</button>
                     </form>
-                </div>            
-            @endforeach
-        </div>
+                </div>
+            </section>
+        @endforeach
     </main>
-    <footer>
-
-    </footer>
-</x-index>
+</x-proveedor.proveedor>

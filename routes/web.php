@@ -10,7 +10,7 @@ use App\View\Components\Servicio\Servicio;
 use App\View\Components\Servicio\ServicioForm;
 use App\View\Components\Servicio\ServicioCliente;
 use App\View\Components\Proveedor\Proveedor;
-use App\View\Components\Cliente\Cliente;
+use App\View\Components\Cliente\ClienteServicios;
 use App\View\Components\Reserva\Reserva;
 
 
@@ -58,5 +58,5 @@ Route::get("/reserva/{id}", [Reserva::class,'render'])->name('reserva');
 // Controladores
 
 // Rutas cliente servicio
-Route::get("/proveedor", [Proveedor::class,'render'])->name('proveedor');
-Route::get("/cliente", [Cliente::class,'render'])->name('cliente');
+Route::get("/proveedor", [Negocio::class,'render'])->name('proveedor');
+Route::get("/cliente", [ClienteServicios::class,'render'])->name('cliente');

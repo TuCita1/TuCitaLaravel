@@ -1,10 +1,10 @@
-<x-index :title="'Servicios Disponibles'">
-    <header>
+<x-cliente.cliente>
+    <head>
         <h1>Servicios Disponibles</h1>
 
         <a href="{{ route('servicio-form', 0) }}"><button>Agendar</button></a>
         <a href="{{ route('cliente') }}"><button>Volver</button></a>
-    </header>
+    </head>
     <main>
         <div>
             <h1>Listado de servicios de tipo {{ $id_tipo }}</h1>
@@ -28,8 +28,5 @@
                 </div>
             @endforeach
         </div>
-    </main>
-    <footer>
-
-    </footer>
-</x-index>
+    </main>    
+</x-cliente.cliente>

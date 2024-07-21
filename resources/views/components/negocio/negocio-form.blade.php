@@ -1,7 +1,7 @@
-<x-index :title="'Negocio'">
-    <header>
+<x-proveedor.proveedor>
+    <head>
         <a href="{{ route('negocio') }}"><button>Volver</button></a>
-    </header>
+    </head>
     <main>
         <label>{{$id}}</label>
         @if ($id != 0)
@@ -75,7 +75,4 @@
             </form>
         @endif                
     </main>
-    <footer>
-
-    </footer>
-</x-index>
+</x-proveedor.proveedor>
