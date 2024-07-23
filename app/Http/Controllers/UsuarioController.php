@@ -48,6 +48,39 @@ class UsuarioController extends Controller
         return redirect()->route('home');
     }
 
+    // Método para crear un nuevo usuario
+    public function actualizar(Request $request)
+        {
+            $request->validate([
+                'id' => 'required',
+                'nombre' => 'required|min:3',
+                'apellido' => 'required|min:3',
+                'email' => 'required|email',
+                'telefono' => 'required|min:10',
+                'contraseña' => 'required',            
+            ]            
+            );            
+    
+    
+            // Crear una nueva instancia del modelo Usuario
+            $usuario = Usuario::findOrFail($request->id);            
+    
+            // Asignar los datos del request a los atributos del modelo Usuario
+            $usuario->nombre = $request->nombre;
+            $usuario->apellido = $request->apellido;
+            $usuario->email = $request->email;
+            $usuario->telefono = $request->telefono;
+            $usuario->contraseña = $request->contraseña;            
+    
+            $this->storage($request, $usuario);
+
+            // Guardar el nuevo usuario en la base de datos
+            $usuario->save();
+    
+            // Redirigir a la ruta de inicio de sesión
+            return redirect()->route('home');
+        }
+
     // Método para ingresar un usuario existente
     public function ingresar(Request $request)
     {
@@ -91,7 +124,10 @@ class UsuarioController extends Controller
         // Almacenar los datos del usuario en la sesión
         $request->session()->put("id", $usuario->id);
         $request->session()->put("nombre", $usuario->nombre);
+        $request->session()->put("apellido", $usuario->apellido);
+        $request->session()->put("telefono", $usuario->telefono);
         $request->session()->put("email", $usuario->email);
+        $request->session()->put("contraseña", $usuario->contraseña);
         $request->session()->put("url", $usuario->url_imagen);
     }
 }

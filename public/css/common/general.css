@@ -88,3 +88,7 @@ main {
   text-align: center;
   flex-wrap: wrap;
 }
+
+.img-perfil {
+  width: 20rem;
+}

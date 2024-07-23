@@ -4,7 +4,6 @@
 /* Importa el archivo de variables CSS que define colores, fuentes, y otros valores globales */
 @import url('./common/variables.css');
 /* Importa el archivo de estilos generales que establece reglas y estilos comunes en todo el sitio */
-@import url('./common/general.css');
 @import url('./common/header.css');
 @import url('./common/card.css');
 @import url('./common/form.css');
@@ -14,6 +13,7 @@
 
 @import url('./component/cliente.css');
 @import url('./component/proveedor.css');
+@import url('./common/general.css');
 
 /* Estilo para el cuerpo de la página */
 body {

@@ -9,8 +9,10 @@ use App\View\Components\Negocio\NegocioForm;
 use App\View\Components\Servicio\Servicio;
 use App\View\Components\Servicio\ServicioForm;
 use App\View\Components\Servicio\ServicioCliente;
-use App\View\Components\Proveedor\Proveedor;
+
 use App\View\Components\Cliente\ClienteServicios;
+use App\View\Components\Perfil\PerfilCliente;
+use App\View\Components\Perfil\PerfilProveedor;
 use App\View\Components\Reserva\Reserva;
 
 
@@ -26,6 +28,7 @@ Route::get("/login", [Login::class,'render'])->name('login');
 // Controladores
 Route::post("/login.crear", [UsuarioController::class,'crear'])->name('login-crear');
 Route::post("/login.entrar", [UsuarioController::class,'ingresar'])->name('login-ingresar');
+Route::put("/usuario.editar", [UsuarioController::class,'actualizar'])->name('usuario-editar');
 
 
 // Rutas de el componente de negocio
@@ -44,7 +47,6 @@ Route::delete('/negocio.eliminar/{id}', [NegocioController::class, 'eliminar'])-
 // Vistas
 Route::get("/servicio", [Servicio::class,'render'])->name('servicio');
 Route::get("/servicio/{id}", [ServicioForm::class,'render'])->name('servicio-form');
-Route::get("/servicio/cliente/{id_tipo}", [ServicioCliente::class,'render'])->name('servicio-cliente');
 // Controladores
 Route::post("/servicio.crear", [ServicioController::class,'crear'])->name('servicio-crear');
 Route::put("/servicio.actualizar", [ServicioController::class,'actualizar'])->name('servicio-editar');
@@ -57,6 +59,11 @@ Route::delete('/servicio.eliminar/{id}', [ServicioController::class, 'eliminar']
 Route::get("/reserva/{id}", [Reserva::class,'render'])->name('reserva');
 // Controladores
 
-// Rutas cliente servicio
+// Rutas proveedor
 Route::get("/proveedor", [Negocio::class,'render'])->name('proveedor');
+Route::get("/proveedor/perfil", [PerfilProveedor::class,'render'])->name('perfil-proveedor');
+
+// Rutas cliente servicio
 Route::get("/cliente", [ClienteServicios::class,'render'])->name('cliente');
+Route::get("/cliente/servicio/{id_tipo}", [ServicioCliente::class,'render'])->name('servicio-cliente');
+Route::get("/cliente/perfil", [PerfilCliente::class,'render'])->name('perfil-cliente');

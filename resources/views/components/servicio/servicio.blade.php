@@ -8,7 +8,7 @@
             <section class="card">
                 <h1>{{ $servicio->nombre }}</h1>
                 <div>
-                    <img src="{{ asset($servicio->url_imagen) }}" alt="">
+                    <img src="{{ asset($servicio->url_imagen) }}" alt="" class="img-cliente">
                 </div>
                 
                 <div>

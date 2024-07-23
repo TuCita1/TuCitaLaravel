@@ -11,9 +11,9 @@
                     <li>Servicios</li>
                     </a>
                     <a href="{{ route('cliente') }}">
-                    <li>Agenda</li>
+                    <li>Reservas</li>
                     </a>
-                    <a href="{{ route('cliente') }}">
+                    <a href="{{ route('perfil-cliente') }}">
                     <li>Perfil</li>
                     </a>
                 </ul>

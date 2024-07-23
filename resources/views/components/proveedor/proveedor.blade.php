@@ -18,7 +18,7 @@
                     <a href="{{ route('servicio') }}">
                         <li>Calificaciones</li>
                     </a>                    
-                    <a href="{{ route('servicio') }}">
+                    <a href="{{ route('perfil-proveedor') }}">
                         <li>Perfil</li>
                     </a>
                 </ul>
