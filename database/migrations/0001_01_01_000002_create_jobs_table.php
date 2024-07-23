@@ -18,7 +18,7 @@ return new class extends Migration
             $table->longText('payload');
             $table->unsignedTinyInteger('attempts');
             $table->timestamp('reserved_at')->nullable();
-            $table->timestamp('available_at');
+            $table->timestamp('available_at')->nullable();
             $table->timestamp('created_at')->useCurrent();
         });
 
