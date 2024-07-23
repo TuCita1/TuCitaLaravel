@@ -112,7 +112,7 @@
                     
 
                     <!-- Campo para seleccionar una imagen (opcional) -->
-                    <label for="file" class="input">
+                    <label for="file" class="input-login">
                         Seleccionar imagen
                     </label>                    
                     <input id="file" type="file" name="image" accept="image/*" value="{{ old('image') }}">
@@ -123,7 +123,7 @@
                                         
                     
                     <!-- Selector para el tipo de usuario -->
-                    <select name="id_tipo_usuario" value="{{ old('id_tipo_usuario') }}" class="input">
+                    <select name="id_tipo_usuario" value="{{ old('id_tipo_usuario') }}" class="input-login">
                         <option value="" disabled selected >Seleccione tipo de usuario</option>
                         <!-- Itera sobre los tipos de usuario disponibles -->
                         @foreach ($tipoUsuarios as $tipoUsuario)

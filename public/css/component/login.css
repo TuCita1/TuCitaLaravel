@@ -177,7 +177,7 @@ input[type="file"] {
 }
 
 /* Estilo para los campos de entrada genéricos */
-.input {
+.input-login {
     width: 100%; /* Ancho completo de los campos de entrada */
     display: block; /* Muestra los campos de entrada como elementos de bloque */
     margin-top: 20px; /* Margen superior para separar del contenido superior */
