@@ -80,3 +80,11 @@ main {
   color: var(--color-1);
   margin-bottom: 2rem;
 }
+
+.flex-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  flex-wrap: wrap;
+}

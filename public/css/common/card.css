@@ -6,16 +6,11 @@
 }
 
 .card-home {
-  border-radius: 10px;
-  /* Bordes redondeados de las tarjetas */
-  padding: 1rem;
-  /* Espaciado interno dentro de las tarjetas */
-  margin: 2rem;
-  /* Margen alrededor de las tarjetas */
-  text-align: center;
-  /* Centra el texto dentro de las tarjetas */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  /* Sombra alrededor de las tarjetas para un efecto de profundidad */
+  border-radius: 10px; /* Bordes redondeados de las tarjetas */
+  padding: 1rem; /* Espaciado interno dentro de las tarjetas */
+  margin: 2rem; /* Margen alrededor de las tarjetas */
+  text-align: center; /* Centra el texto dentro de las tarjetas */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra alrededor de las tarjetas para un efecto de profundidad */
 }
 
 .card {

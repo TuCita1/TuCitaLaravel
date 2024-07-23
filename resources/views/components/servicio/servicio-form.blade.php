@@ -1,13 +1,9 @@
 <x-proveedor.proveedor>
-    <head>
-        <a href="{{ route('servicio') }}"><button>Volver</button></a>
-    </head>
-    <main>
-        <label>{{ $id }}</label>
+
+    <main class="content-form">
         @if ($id != 0)
 
-            <form method="POST" action="{{ route('servicio-editar') }}" enctype="multipart/form-data" class="formulario_register">
-                
+            <form method="POST" action="{{ route('servicio-editar') }}" enctype="multipart/form-data" class="form">
                 @csrf
                 @method('PUT')
 
@@ -17,145 +13,158 @@
                     {{ $message }}
                 @enderror
 
-                <input type="text" name="nombre" placeholder="Nombre" value="{{ old('nombre', $servicio->nombre) }}">
+
+
+                <input type="text" class="input" name="nombre" placeholder="Nombre"
+                    value="{{ old('nombre', $servicio->nombre) }}">
                 @error('nombre')
-                    {{ $message }}
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <input type="text" name="descripcion" placeholder="Descripcion"
+                <input type="text" class="input" name="descripcion" placeholder="Descripcion"
                     value="{{ old('descripcion', $servicio->descripcion) }}">
                 @error('descripcion')
-                    {{ $message }}
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <input type="number" name="valor" placeholder="valor servicio"
+                <input type="number" class="input" name="valor" placeholder="valor servicio"
                     value="{{ old('valor', $servicio->valor) }}">
                 @error('valor')
-                    {{ $message }}
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <input type="number" name="duracion" placeholder="duracion servicio"
+                <input type="number" class="input" name="duracion" placeholder="duracion servicio"
                     value="{{ old('duracion', $servicio->duracion) }}">
                 @error('duracion')
-                    {{ $message }}
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <input type="number" name="servicios_simultaneos" placeholder="servicios simultaneos"
+                <input type="number" class="input" name="servicios_simultaneos" placeholder="servicios simultaneos"
                     value="{{ old('servicios_simultaneos', $servicio->servicios_simultaneos) }}">
                 @error('servicios_simultaneos')
-                    {{ $message }}
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <input type="number" name="hora_entrada" placeholder="hora de entrada"
+                <input type="number" class="input" name="hora_entrada" placeholder="hora de entrada"
                     value="{{ old('hora_entrada', $servicio->hora_entrada) }}">
                 @error('hora_entrada')
-                    {{ $message }}
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <input type="number" name="hora_salida" placeholder="hora de salida"
+                <input type="number" class="input" name="hora_salida" placeholder="hora de salida"
                     value="{{ old('hora_salida', $servicio->hora_salida) }}">
                 @error('hora_salida')
-                    {{ $message }}
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <input type="file" name="image" accept="image/*" value="{{ old('image', $servicio->image) }}">
-                @error('image')
-                    {{ $message }}
-                @enderror
-
-                <label for="opciones">Negocio</label>
-                <select name="id_negocio" value="{{old('id_negocio', $servicio->id_negocio)}}">
+                <select name="id_negocio" class="input" value="{{ old('id_negocio', $servicio->id_negocio) }}">
+                    <option value="" disabled selected>Seleccione su negocio</option>
                     @foreach ($negocios as $negocio)
                         <option value="{{ $negocio->id }}">{{ $negocio->nombre }}</option>
                     @endforeach
                 </select>
-                @error('id_tipo_usuario')
-                    {{$message}}
+                @error('id_negocio')
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <label for="opciones">Tipo Servicio</label>
-                <select name="id_tipo_servicio" value="{{old('id_tipo_servicio', $servicio->id_tipo_servicio)}}">
+
+                <select name="id_tipo_servicio" class="input"
+                    value="{{ old('id_tipo_servicio', $servicio->id_tipo_servicio) }}">
+                    <option value="" disabled selected>Seleccione el tipo de servicio</option>
                     @foreach ($tiposServicio as $tipoServicio)
                         <option value="{{ $tipoServicio->id }}">{{ $tipoServicio->nombre }}</option>
                     @endforeach
                 </select>
                 @error('id_tipo_servicio')
-                    {{$message}}
+                    <small>{{ $message }}</small>
+                @enderror
+
+                <label for="file" class="input"> Seleccionar imagen </label>
+                <input id="file" type="file" class="input" name="image" accept="image/*"
+                    value="{{ old('image', $servicio->image) }}">
+                @error('image')
+                    {{ $message }}
                 @enderror
 
                 <button type="submit">Actualizar</button>
             </form>
+
         @else
-            
-        <form method="POST" action="{{ route('servicio-crear') }}" enctype="multipart/form-data"
-                class="formulario_register">
+            <form method="POST" action="{{ route('servicio-crear') }}" enctype="multipart/form-data" class="form">
                 @csrf
                 <h1>Crear servicio</h1>
 
-                <input type="text" name="nombre" placeholder="Nombre" value="{{ old('nombre') }}">
+                <input type="text" class="input" name="nombre" placeholder="Nombre" value="{{ old('nombre') }}">
                 @error('nombre')
-                    {{ $message }}
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <input type="text" name="descripcion" placeholder="Descripcion"
+                <input type="text" class="input" name="descripcion" placeholder="Descripcion"
                     value="{{ old('descripcion') }}">
                 @error('descripcion')
-                    {{ $message }}
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <input type="number" name="valor" placeholder="valor servicio"
+                <input type="number" class="input" name="valor" placeholder="valor servicio"
                     value="{{ old('valor') }}">
                 @error('valor')
-                    {{ $message }}
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <input type="number" name="duracion" placeholder="duracion servicio" value="{{ old('duracion') }}">
+                <input type="number" class="input" name="duracion" placeholder="duracion servicio"
+                    value="{{ old('duracion') }}">
                 @error('duracion')
-                    {{ $message }}
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <input type="number" name="servicios_simultaneos" placeholder="servicios simultaneos" value="{{ old('servicios_simultaneos') }}">
-            @error('servicios_simultaneos')
-                {{ $message }}
-            @enderror
-
-            <input type="number" name="hora_entrada" placeholder="hora de entrada" value="{{ old('hora_entrada') }}">
-            @error('hora_entrada')
-                {{ $message }}
-            @enderror
-
-            <input type="number" name="hora_salida" placeholder="hora de salida" value="{{ old('hora_salida') }}">
-            @error('hora_salida')
-                {{ $message }}
-            @enderror                
-
-                <input type="file" name="image" accept="image/*" value="{{ old('image') }}">
-                @error('image')
-                    {{ $message }}
+                <input type="number" class="input" name="servicios_simultaneos" placeholder="servicios simultaneos"
+                    value="{{ old('servicios_simultaneos') }}">
+                @error('servicios_simultaneos')
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <label for="opciones">Negocio</label>
-                <select name="id_negocio" value="{{old('id_negocio')}}">
+                <input type="number" class="input" name="hora_entrada" placeholder="hora de entrada"
+                    value="{{ old('hora_entrada') }}">
+                @error('hora_entrada')
+                    <small>{{ $message }}</small>
+                @enderror
+
+                <input type="number" class="input" name="hora_salida" placeholder="hora de salida"
+                    value="{{ old('hora_salida') }}">
+                @error('hora_salida')
+                    <small>{{ $message }}</small>
+                @enderror
+
+                <select name="id_negocio" class="input" value="{{ old('id_negocio') }}">
+                    <option value="" disabled selected>Seleccione su negocio</option>
                     @foreach ($negocios as $negocio)
                         <option value="{{ $negocio->id }}">{{ $negocio->nombre }}</option>
                     @endforeach
                 </select>
-                @error('id_tipo_usuario')
-                    {{$message}}
+                @error('id_negocio')
+                    <small>{{ $message }}</small>
                 @enderror
 
-                <label for="opciones">Tipo Servicio</label>
-                <select name="id_tipo_servicio" value="{{old('id_tipo_servicio')}}">
+                <select name="id_tipo_servicio" class="input" value="{{ old('id_tipo_servicio') }}">
+                    <option value="" disabled selected>Seleccione el tipo de servicio</option>
                     @foreach ($tiposServicio as $tipoServicio)
                         <option value="{{ $tipoServicio->id }}">{{ $tipoServicio->nombre }}</option>
                     @endforeach
                 </select>
                 @error('id_tipo_servicio')
-                    {{$message}}
+                    <small>{{ $message }}</small>
+                @enderror
+
+                <label for="file" class="input"> Seleccionar imagen </label>
+                <input id="file" type="file" class="input" name="image" accept="image/*"
+                    value="{{ old('image') }}">
+                @error('image')
+                    <small>{{ $message }}</small>
                 @enderror
 
                 <button type="submit">Crear</button>
             </form>
+
         @endif
     </main>
 </x-proveedor.proveedor>

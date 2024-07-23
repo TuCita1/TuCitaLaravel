@@ -6,6 +6,9 @@
                     <img src="{{asset('img/app/logo.svg')}}">
                 </a>
                 <ul>
+                    <a href="{{ route('servicio') }}">
+                        <li>Agenda</li>
+                    </a>
                     <a href="{{ route('negocio') }}">
                         <li>Negocios</li>
                     </a>
@@ -14,10 +17,7 @@
                     </a>
                     <a href="{{ route('servicio') }}">
                         <li>Calificaciones</li>
-                    </a>
-                    <a href="{{ route('servicio') }}">
-                        <li>Agenda</li>
-                    </a>
+                    </a>                    
                     <a href="{{ route('servicio') }}">
                         <li>Perfil</li>
                     </a>
