@@ -127,7 +127,7 @@ class UsuarioController extends Controller
         $request->session()->put("apellido", $usuario->apellido);
         $request->session()->put("telefono", $usuario->telefono);
         $request->session()->put("email", $usuario->email);
-        $request->session()->put("contraseña", $usuario->contraseña);
+        $request->session()->put("password", $usuario->contraseña);
         $request->session()->put("url", $usuario->url_imagen);
     }
 }

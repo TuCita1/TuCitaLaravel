@@ -38,14 +38,12 @@
             @enderror
 
             <input type="password" class="input" name="contraseña" placeholder="Contraseña"
-                value="{{ old('contraseña', session('contraseña')) }}">
+                value="{{ old('contraseña', session('password')) }}">
             @error('contraseña')
                 <small>{{ $message }}</small>
             @enderror
 
             <button type="submit">Actualizar</button>
-        </form>
-
-       
+        </form>       
     </main>
 </x-cliente.cliente>
