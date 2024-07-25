@@ -46,6 +46,5 @@
             <button type="submit">Actualizar</button>
         </form>
 
-       
     </main>
 </x-cliente.cliente>

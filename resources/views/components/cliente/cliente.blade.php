@@ -13,6 +13,9 @@
                     <a href="{{ route('cliente') }}">
                     <li>Reservas</li>
                     </a>
+                    <a href="{{ route('calificacion-form') }}">
+                    <li>Calificaciones</li>
+                    </a>
                     <a href="{{ route('perfil-cliente') }}">
                     <li>Perfil</li>
                     </a>
