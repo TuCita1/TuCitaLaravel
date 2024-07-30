@@ -19,6 +19,7 @@ use App\View\Components\Reserva\Reserva;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\NegocioController;
 use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\ReservaController;
 
 // Rutas de el componente de login
 
@@ -57,7 +58,10 @@ Route::delete('/servicio.eliminar/{id}', [ServicioController::class, 'eliminar']
 
 // Vistas
 Route::get("/reserva/{id}", [Reserva::class,'render'])->name('reserva');
+Route::get("/reservas", [Reserva::class,'render'])->name('reservas');
+
 // Controladores
+Route::post("/reservar", [ReservaController::class,'crear'])->name('reservar');
 
 // Rutas proveedor
 Route::get("/proveedor", [Negocio::class,'render'])->name('proveedor');

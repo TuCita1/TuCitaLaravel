@@ -24,5 +24,6 @@
             <label>daniela.gomez@misena.edu.co</label>
         </div>
     </footer>
+    @livewireScripts
 </body>
 </html>

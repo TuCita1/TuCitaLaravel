@@ -1,13 +1,11 @@
-<x-index :title="'Reserva'">
-    <header>
-        <h1>Reserva</h1>
-        <p>Nombre: {{ session('nombre') }}</p>
-        <a href="{{ route('home') }}"><button>Salir</button></a>  
-    </header>
-    <main>
-        <div>{{$servicio}}</div>
+<x-cliente.cliente :title="'Cliente'">    
+    <main>        
+        @livewire('reserva-cliente',[
+            'id' => $id,
+            'servicio' => $servicio, 
+            'fechaInicio' => $fechaInicio, 
+            'fechaFin' => $fechaFin, 
+            'horarios' => $horarios
+        ])
     </main>
-    <footer>
-
-    </footer>
-</x-index>
+</x-cliente.cliente>

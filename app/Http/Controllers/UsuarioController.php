@@ -81,7 +81,9 @@ class UsuarioController extends Controller
             return redirect()->route('home');
         }
 
-    // Método para ingresar un usuario existente
+    
+        // Método para ingresar un usuario existente
+    
     public function ingresar(Request $request)
     {
         // Validaciones para asegurar que los datos del request son correctos
