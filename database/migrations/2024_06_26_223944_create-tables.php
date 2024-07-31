@@ -56,7 +56,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_usuario'); 
             //$table->foreign('id-usuario')->references('id')->on('usuario')->onDelete('cascade'); 
 
-            $table->unsignedBigInteger('id_negocio'); 
+            $table->unsignedBigInteger('id_servicio'); 
             //$table->foreign('id-negocio')->references('id')->on('negocio')->onDelete('cascade'); 
         });
 
@@ -102,7 +102,7 @@ return new class extends Migration
 
         Schema::table('calificacion', function (Blueprint $table) {                        
             $table->foreign('id_usuario')->references('id')->on('usuario')->onDelete('cascade');             
-            $table->foreign('id_negocio')->references('id')->on('negocio')->onDelete('cascade');           
+            $table->foreign('id_servicio')->references('id')->on('servicio')->onDelete('cascade');           
         });
 
         Schema::table('servicio', function (Blueprint $table) {                        

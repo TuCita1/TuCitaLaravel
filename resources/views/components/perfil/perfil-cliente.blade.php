@@ -44,6 +44,6 @@
             @enderror
 
             <button type="submit">Actualizar</button>
-        </form>       
+        </form>
     </main>
 </x-cliente.cliente>

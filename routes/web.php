@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalificacionController;
 use Illuminate\Support\Facades\Route;
 
 use App\View\Components\Home\Home;
@@ -9,6 +10,8 @@ use App\View\Components\Negocio\NegocioForm;
 use App\View\Components\Servicio\Servicio;
 use App\View\Components\Servicio\ServicioForm;
 use App\View\Components\Servicio\ServicioCliente;
+
+use App\View\Components\Calificacion\CalificacionForm;
 
 use App\View\Components\Cliente\ClienteServicios;
 use App\View\Components\Perfil\PerfilCliente;
@@ -41,6 +44,15 @@ Route::get("/negocio/{id}", [NegocioForm::class,'render'])->name('negocio-form')
 Route::post("/negocio.crear", [NegocioController::class,'crear'])->name('negocio-crear');
 Route::put("/negocio.actualizar", [NegocioController::class,'actualizar'])->name('negocio-editar');
 Route::delete('/negocio.eliminar/{id}', [NegocioController::class, 'eliminar'])->name('negocio.eliminar');
+
+// Rutas de el componente de calificacion 
+
+// Vistas 
+Route::get("/calificacion", [CalificacionForm::class,'render'])->name('calificacion-form');
+
+
+// Controladores 
+Route::post("/calificacion.crear", [CalificacionController::class,'crear'])->name('calificacion-crear');
 
 
 // Rutas de el componente de servicio
