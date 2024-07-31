@@ -17,6 +17,7 @@ use App\View\Components\Cliente\ClienteServicios;
 use App\View\Components\Perfil\PerfilCliente;
 use App\View\Components\Perfil\PerfilProveedor;
 use App\View\Components\Reserva\Reserva;
+use App\View\Components\Reserva\Reservas;
 
 
 use App\Http\Controllers\UsuarioController;
@@ -70,7 +71,7 @@ Route::delete('/servicio.eliminar/{id}', [ServicioController::class, 'eliminar']
 
 // Vistas
 Route::get("/reserva/{id}", [Reserva::class,'render'])->name('reserva');
-Route::get("/reservas", [Reserva::class,'render'])->name('reservas');
+Route::get("/reservas", [Reservas::class,'render'])->name('reservas');
 
 // Controladores
 Route::post("/reservar", [ReservaController::class,'crear'])->name('reservar');

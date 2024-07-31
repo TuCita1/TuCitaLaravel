@@ -10,7 +10,7 @@
                     <a href="{{ route('cliente') }}">
                     <li>Servicios</li>
                     </a>
-                    <a href="{{ route('cliente') }}">
+                    <a href="{{ route('reservas') }}">
                     <li>Reservas</li>
                     </a>
                     <a href="{{ route('calificacion-form') }}">

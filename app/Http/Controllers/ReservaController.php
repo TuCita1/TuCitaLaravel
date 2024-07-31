@@ -52,4 +52,14 @@ class ReservaController extends Controller
         // Retorna las reservas
         return $reserva;
     }
+
+    // Método para obtener todas las reservas por usuario
+    public function obtenerReservasPorUsuario($id_usuario)
+    {        
+        // Obtener las reservas que se han hecho en un dia para un servicio
+        $reservas = Reserva::with('servicio')->where('id_usuario', $id_usuario)->orderBy('fecha', 'desc')->get();
+
+        // Retorna las reservas
+        return $reservas;
+    }
 }
