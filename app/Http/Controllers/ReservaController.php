@@ -62,4 +62,15 @@ class ReservaController extends Controller
         // Retorna las reservas
         return $reservas;
     }
+
+    public function obtenerReservasPorProveedor($id_usuario)
+    {        
+        // Obtener las reservas que se han hecho en un dia para un servicio
+        $reservas = Reserva::with('servicio')->whereHas('servicio.negocio.usuario', function ($query) use ($id_usuario) {
+            $query->where('id', $id_usuario);
+        })->orderBy('fecha', 'desc')->get();        
+
+        // Retorna las reservas
+        return $reservas;
+    }
 }

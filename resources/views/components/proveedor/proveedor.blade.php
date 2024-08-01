@@ -6,8 +6,8 @@
                     <img src="{{asset('img/app/logo.svg')}}">
                 </a>
                 <ul>
-                    <a href="{{ route('servicio') }}">
-                        <li>Agenda</li>
+                    <a href="{{ route('reservas-proveedor') }}">
+                        <li>Reservas</li>
                     </a>
                     <a href="{{ route('negocio') }}">
                         <li>Negocios</li>

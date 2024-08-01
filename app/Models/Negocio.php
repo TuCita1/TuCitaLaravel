@@ -15,4 +15,9 @@ class Negocio extends Model
     {
         return $this->hasMany(Servicio::class, 'id_negocio', 'id');
     }    
+
+    public function usuario()
+    {
+        return $this->belongsTo(Usuario::class, 'id_usuario', 'id');
+    }
 }

@@ -1,4 +1,4 @@
-<x-cliente.cliente>
+<x-proveedor.proveedor>
     <section class="head">
         <h1>Reservas</h1>               
     </section>
@@ -28,4 +28,4 @@
             </section>
         @endforeach
     </main>
-</x-cliente.cliente>
+</x-proveedor.proveedor>
