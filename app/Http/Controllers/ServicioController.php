@@ -136,7 +136,7 @@ class ServicioController extends Controller
     public function obtenerServicioPorTipo($idTipoServicio)
     {
         // Obtener los servicios por tipo de servicio incluyendo los negocios a los que pertenecen
-        $servicio = Servicio::with('negocio')->with('usuario')->where('id_tipo_servicio', $idTipoServicio)->get();
+        $servicio = Servicio::with('negocio')->where('id_tipo_servicio', $idTipoServicio)->get();
         return $servicio;
     }
 
