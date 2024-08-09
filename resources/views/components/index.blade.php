@@ -12,12 +12,12 @@
     {{$slot}}
     <footer>
         <div>
-            <h4>Daniela Gómez Murillo</h4>
-            <label>daniela.gomez@misena.edu.co</label>
+            <h4>Johana Peña Parra</h4>
+            <label>jhoanna_96@hotmail.com </label>
         </div>
         <div>
-            <h4>Daniela Gómez Murillo</h4>
-            <label>daniela.gomez@misena.edu.co</label>
+            <h4>Nevardo Cardona Pemberty</h4>
+            <label>nevardocp@gmail.com </label>
         </div>
         <div>
             <h4>Daniela Gómez Murillo</h4>

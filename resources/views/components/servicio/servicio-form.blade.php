@@ -45,13 +45,13 @@
                     <small>{{ $message }}</small>
                 @enderror
 
-                <input type="number" class="input" name="hora_entrada" placeholder="hora de entrada"
+                <input type="time" class="input" name="hora_entrada" placeholder="hora de entrada"
                     value="{{ old('hora_entrada', $servicio->hora_entrada) }}">
                 @error('hora_entrada')
                     <small>{{ $message }}</small>
                 @enderror
 
-                <input type="number" class="input" name="hora_salida" placeholder="hora de salida"
+                <input type="time" class="input" name="hora_salida" placeholder="hora de salida"
                     value="{{ old('hora_salida', $servicio->hora_salida) }}">
                 @error('hora_salida')
                     <small>{{ $message }}</small>
@@ -124,13 +124,13 @@
                     <small>{{ $message }}</small>
                 @enderror
 
-                <input type="number" class="input" name="hora_entrada" placeholder="hora de entrada"
+                <input type="time" class="input" name="hora_entrada" placeholder="hora de entrada"
                     value="{{ old('hora_entrada') }}">
                 @error('hora_entrada')
                     <small>{{ $message }}</small>
                 @enderror
 
-                <input type="number" class="input" name="hora_salida" placeholder="hora de salida"
+                <input type="time" class="input" name="hora_salida" placeholder="hora de salida"
                     value="{{ old('hora_salida') }}">
                 @error('hora_salida')
                     <small>{{ $message }}</small>
